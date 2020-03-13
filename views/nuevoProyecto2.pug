@@ -1,0 +1,86 @@
+doctype html
+head
+  include partials/header2
+body#page-top.fondo1
+// Page Wrapper
+#wrapper
+  // Sidebar
+  ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion
+    // Sidebar - Brand
+    a.sidebar-brand.d-flex.align-items-center.justify-content-center(href='/')
+      .sidebar-brand-icon
+        img.d-block(src='/img/comprobar.png' alt='' srcset='')
+      .sidebar-brand-text.mx-3.text-center.titulo.mt-2
+        | Control
+        span Task
+    // Divider
+    hr.sidebar-divider
+    // Heading
+    .sidebar-heading
+      | Opciones
+    // Nav Item - Dashboard
+    li.nav-item
+      a.nav-link(data-toggle='modal' data-target='#modal-default')
+        i.fas.fa-info-circle
+        span Acerca de
+    // Divider
+    hr.sidebar-divider.my-0
+    li.nav-item
+      a.nav-link(href='/cerrar-sesion')
+        i.fas.fa-sign-out-alt
+        span Cerrar sesi&oacute;n
+    // Divider
+    hr.sidebar-divider
+    // Heading
+    .sidebar-heading
+      | Proyectos
+    include partials/mostrarProyectosBarra
+    // Sidebar Toggler (Sidebar)
+    .text-center.d-none.d-md-inline
+      button#sidebarToggle.rounded-circle.border-0
+  // End of Sidebar
+  // Content Wrapper
+  #content-wrapper.d-flex.flex-column.fondo3
+    // Main Content
+    #content
+      // Topbar
+      nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top
+        .d-flex.flex-row
+          // Sidebar Toggle (Topbar)
+          button#sidebarToggleTop.btn.btn-link.d-md-none.rounded-circle.mt-2.bg-white
+            i.fa.fa-bars
+          .sidebar-brand-text.mx-3.text-center.titulo.ml-5.d-md-none
+            | Control
+            span Task
+          .sidebar-brand-text.mx-3.text-center.titulo.mt-2.d-none.d-md-block Administrador de proyectos
+        // Display flex div
+      // Container, row and formCrearProyecto
+      include mixins/formularioCrearProyecto
+      +crearProyecto2(proyecto)
+    // Main content
+    include partials/terminosCondiciones   
+    // End of main content
+    // Footer
+    footer.sticky-footer.bg-white
+      .container.my-auto
+        .copyright.text-center.my-auto
+          span 2020 Copyright &copy; ControlTask.
+    // End of Footer
+  // End of Content Wrapper
+// End of Page Wrapper
+// Scroll to Top Button
+a.scroll-to-top.rounded(href='#page-top')
+  i.fas.fa-angle-up
+// Logout Modal
+#logoutModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title Ready to Leave?
+        button.close(type='button' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body Select &quot;Logout&quot; below if you are ready to end your current session.
+      .modal-footer
+        button.btn.btn-secondary(type='button' data-dismiss='modal') Cancel
+        a.btn.btn-primary(href='login') Logout
+include partials/scripts

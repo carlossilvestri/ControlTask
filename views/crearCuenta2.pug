@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+html(lang='es')
+    head
+        include partials/header2
+    body.fondo3
+        .container
+            .row
+                include partials/mensajeDeError2
+                .col-10.offset-1.col-lg-6.offset-lg-3.form1.mt-5.z-depth-5
+                    img.centrar.d-block.mt-2(src='img/comprobar.png', alt='', srcset='')
+                    h1.text-center.titulo.mt-2
+                        | Control
+                        span Task
+                    h2.text-dark.opsans.text-center.mt-5 Crear cuenta
+                    form.text-center(method="POST" action="/crear-cuenta")
+                        .input-field.col-12.col-md-10.offset-0.offset-md-1.pl-0.pr-5.pr-md-3
+                            .input-field
+                                i#icono1.material-icons.prefix.black-text email
+                                input#autocomplete-input.autocomplete(type='email' name="email" required value= email)
+                                label(for='autocomplete-input') Email
+                            .input-field.mb-5
+                                i#icono2.material-icons.prefix.black-text.fas.fa-lock
+                                input#autocomplete-input.autocomplete(type='password' name="password" required value= password)
+                                label(for='autocomplete-input') Contraseña
+                        input.btn.btn-success.btn-block.col-10.offset-1.col-md-8.offset-md-2.mb-3.mb-md-4(type='submit', value='Crear', data-loading-text='Loading...')
+                    .row
+                        //
+                            <a href="index" class="d-block btn btn-facebook btn-user btn-block col-10 offset-1 col-md-8 offset-md-2  mb-3">
+                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                            </a>
+                        a.text-muted.msr.linkH.p15px.col-12.offset-0.text-center.mt-4(href='iniciar-sesion') ¿Ya tienes una cuenta? Inicia sesión aquí.
+                        a.text-muted.msr.linkH.p15px.col-12.text-center.mt-4(data-toggle='modal', data-target='#modal-default') Acerca de
+        include partials/terminosCondiciones
+        include partials/scripts

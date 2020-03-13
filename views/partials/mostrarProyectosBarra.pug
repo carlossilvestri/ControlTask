@@ -1,0 +1,12 @@
+//Nav Item - Pages Collapse Menu
+if(proyectos.length)
+    each proyecto in proyectos
+        ul#proyectos
+            li.nav-item
+                a#proyectos.collapsed.pb-0.pt-1(data-toggle='collapse' data-target=`#${proyecto.url}` aria-expanded='true' aria-controls='collapseTwo')
+                    a(href=`/proyectos/${proyecto.url}`).nav-link
+                        i.fas.fa-tasks
+                        span.text-center= proyecto.nombre
+
+        // Divider
+        hr.sidebar-divider.d-none.d-md-block

@@ -1,0 +1,15 @@
+mixin crearProyecto2(proyecto = {})
+    .container
+            .row
+                form.col-12.col-lg-6.offset-lg-3.formCrearProyecto.mt-3.mt-md-2.z-depth-5(action=`/nuevo-proyecto/${proyecto.id || ''}` method="POST")
+                    h3.msr.text-center.mt-4.cP.black-text.d-md-none Administrador de proyectos
+                    if(proyecto.nombre) 
+                        h3.text-dark.msr.text-center.mt-2.mt-md-5.cP.black-text Edita un proyecto
+                    else
+                        h3.text-dark.msr.text-center.mt-2.mt-md-5.cP.black-text Crea un proyecto
+                    .text-center
+                        .input-field.col-11.offset-1.col-md-10.offset-md-1.pl-0.pr-5.pr-md-3
+                            .input-field
+                            input#autocomplete-input.autocomplete(type='text' required='' value=proyecto.nombre name="nombre")
+                            label(for='autocomplete-input') Nombre del proyecto
+                        input.rounded.btn.btn-success.btn-block.col-8.offset-2.col-md-4.offset-md-7.mb-3.mb-md-4(type='submit'  value=`${proyecto.nombre ? 'Guardar' : 'Crear'}` data-loading-text='Loading...')

@@ -1,0 +1,10 @@
+.listado-pendientes.rounded.bg-white.mt-3.mt-md-2.z-depth-5
+    h3.titulo.text-center.mt-4.cP.black-text.d-md-none Administrador de proyectos
+    h2.text-center.mt-4.cP.black-text.titulo Proyecto: "#{proyecto.nombre}"
+    h3.text-dark.msr.text-md-center.mt-3.mt-md-4.mb-4.cP.black-text Crea una tarea
+    form.text-center(action=`/proyectos/${proyecto.url}` method="POST")
+        .input-field.col-11.offset-1.col-md-10.offset-md-1.pl-0.pr-5.pr-md-3
+            .input-field
+                input#autocomplete-input.autocomplete(type='text' required='' name="tarea" )
+                label(for='autocomplete-input') Nombre de la tarea
+            input.rounded.btn.btn-success.btn-block.col-8.offset-2.col-md-4.offset-md-7.mb-3.mb-md-4(type='submit' value='Crear' data-loading-text='Loading...')

@@ -1,0 +1,20 @@
+.listado-pendientes.mb-4.z-depth-5.rounded.bg-white
+    h3.text-center.msr.cP.h2.black-text.d-flex.justify-content-center
+        i.fas.fa-tasks.mr-3.mt-1
+        .mb-4 Tareas
+        if tareas.length
+            span(class="badge badge-info white-text" id="badge") #{tareas.length}
+    .listado-pendientess
+        ul
+            if tareas.length
+                each tarea in tareas
+                    li.p-3.border.text-muted.rounded.mb-4.tareaa(data-tarea=tarea.id)
+                        p.msr.p15px.text-center= tarea.tarea
+                        .acciones.d-flex.align-items-end.flex-column
+                            if tarea.estado
+                                i.far.fa-check-circle.completo.p-2
+                            else
+                                i.far.fa-check-circle.p-2
+                            i.fas.fa-trash.p-2.black-text
+            else
+                p No hay tareas en este proyecto
