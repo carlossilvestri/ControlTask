@@ -196,3 +196,13 @@ nav {
 .barra-avance {
     width: 100%;
 }
+
+
+/*Alertas*/
+
+.alert-error {
+    color: white !important;
+    color: #d54848;
+    background-color: #fa6060;
+    border-color: #e74d4d;
+}
